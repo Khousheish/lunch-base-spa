@@ -1,13 +1,24 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "1d069da8-c0db-484b-8cdd-9e551a912d44"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "lunch-base-spa": {
       "projectType": "application",
       "schematics": {
+        "@schematics/angular:class": {
+          "skipTests": false
+        },
         "@schematics/angular:component": {
-          "style": "scss"
+          "prefix": "lb",
+          "style": "scss",
+          "changeDetection": "OnPush"
+        },
+        "@schematics/angular:directive": {
+          "prefix": "lb"
         },
         "@schematics/angular:application": {
           "strict": true
@@ -31,6 +42,9 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -84,6 +98,18 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "lunch-base-spa:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
