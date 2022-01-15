@@ -1,10 +1,22 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+
+import { environment } from '@Environment';
 
 @Component({
   selector: 'lb-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
-  title = 'lunch-base-spa';
+export class AppComponent implements OnInit {
+
+  public constructor(
+    private readonly titleService: Title,
+  ) {
+  }
+
+  public ngOnInit(): void {
+    this.titleService.setTitle(environment.title);
+  }
 }
