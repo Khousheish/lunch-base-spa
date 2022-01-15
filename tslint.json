@@ -1,0 +1,10 @@
+{
+  "rulesDirectory": [
+    "node_modules/codelyzer"
+  ],
+  "extends": [
+    "./tslint.core.json",
+    "./tslint.codelyzer.json",
+    "./tslint.rxjs.json"
+  ]
+}
