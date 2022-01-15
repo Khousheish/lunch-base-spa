@@ -39,6 +39,7 @@ export class AuthEffects {
       this.actions$
         .pipe(
           ofType(AuthActionsTypes.SignInSuccess),
+          // tslint:disable-next-line: no-any
           map((user: any): any => setUser({user: user.user})),
           tap((): void => {
             this.router.navigate([]);

@@ -2,24 +2,24 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignInComponent } from './sign-in.component';
 
-describe('SignInComponent', () => {
+describe('SignInComponent', (): void => {
   let component: SignInComponent;
   let fixture: ComponentFixture<SignInComponent>;
 
-  beforeEach(async () => {
+  beforeEach(async(): Promise<void> => {
     await TestBed.configureTestingModule({
-      declarations: [ SignInComponent ]
+      declarations: [ SignInComponent ],
     })
     .compileComponents();
   });
 
-  beforeEach(() => {
+  beforeEach((): void => {
     fixture = TestBed.createComponent(SignInComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(component).toBeTruthy();
   });
 });
