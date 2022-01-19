@@ -1,21 +1,3 @@
-.profile-details {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-
-  &__username {
-    margin-left: 8px;
-    font-size: 12px;
-  }
-
-  .pi {
-    position: relative;
-    top: 2px;
-    margin-left: 4px;
-    font-size: 8px;
-  }
-}
-
 .profile-actions {
   margin: 0;
   padding: 0;

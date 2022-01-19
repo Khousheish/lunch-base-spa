@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 import { SupportedLanguages } from '@Enums/supported-languages.enum';
-import { environment } from '@Environment';
 
 @Component({
   selector: 'lb-language-switcher',
@@ -19,7 +18,9 @@ export class LanguageSwitcherComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.currentLanguage = this.translateService.currentLang;
+    this.currentLanguage = localStorage.getItem('language') === SupportedLanguages.English
+      ? SupportedLanguages.English
+      : SupportedLanguages.Dutch;
   }
 
   public changeLanguage(): void {
@@ -27,5 +28,7 @@ export class LanguageSwitcherComponent implements OnInit {
       ? this.translateService.use(SupportedLanguages.English)
       : this.translateService.use(SupportedLanguages.Dutch);
     this.currentLanguage = this.translateService.currentLang;
+    localStorage.setItem('language', `${this.currentLanguage}`);
+
   }
 }

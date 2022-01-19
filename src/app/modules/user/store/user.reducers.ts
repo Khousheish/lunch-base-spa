@@ -7,10 +7,10 @@ import { UserState } from './user.state';
 export const userInitialState: UserState = {
   user: {
     id: 1,
-    username: 'kh',
-    email: 'kh',
-    firstName: 'hk',
-    lastName: 'db',
+    username: 'khousheish',
+    email: 'khousheish@live.com',
+    firstName: 'Hassan',
+    lastName: 'Khousheish',
     createdAt: '123',
   },
   pending: false,
