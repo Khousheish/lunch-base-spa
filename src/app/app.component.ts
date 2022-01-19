@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { TranslateService } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 import { ThemeSwitcherService } from '@Components/theme-switcher/services/theme-switcher.service';
+import { SupportedLanguages } from '@Enums/supported-languages.enum';
 import { environment } from '@Environment';
 
 @Component({
@@ -23,6 +24,11 @@ export class AppComponent implements OnInit {
   public ngOnInit(): void {
     this.titleService.setTitle(environment.title);
     this.themeSwitcherService.initializeTheme();
+    const supportedLangs: SupportedLanguages[] = [SupportedLanguages.English, SupportedLanguages.Dutch];
     this.translateService.setDefaultLang(environment.defaultLang);
+    this.translateService.use(environment.defaultLang);
+    supportedLangs.forEach((language: SupportedLanguages): void => {
+      this.translateService.reloadLang(language);
+    });
   }
 }
