@@ -25,9 +25,10 @@ export class ThemeSwitcherService {
   }
 
   public changeTheme(isDarkTheme: boolean = this.isDarkTheme): void {
-    let themeLink = this.document.getElementById('app-theme') as HTMLLinkElement;
+    const themeLink: HTMLLinkElement = this.document.getElementById('app-theme') as HTMLLinkElement;
     const themeName: string = isDarkTheme ? 'arya' : 'saga';
-    if (themeLink) {
+
+    if (themeLink.href) {
       themeLink.href = `${themeName}-blue.css`;
     }
     this.isDarkTheme = isDarkTheme;

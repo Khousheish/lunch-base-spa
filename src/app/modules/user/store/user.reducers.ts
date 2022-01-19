@@ -5,7 +5,14 @@ import { setUser } from './user.actions';
 import { UserState } from './user.state';
 
 export const userInitialState: UserState = {
-  user: null,
+  user: {
+    id: 1,
+    username: 'kh',
+    email: 'kh',
+    firstName: 'hk',
+    lastName: 'db',
+    createdAt: '123',
+  },
   pending: false,
   error: null, // to be fixed
 };

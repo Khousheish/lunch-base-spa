@@ -20,10 +20,10 @@ body {
 
 .light-theme {
   background-color: map-get($colors , lightBg);
-  color: #495057;
+  color: map-get($colors , lightFont);
 }
 
 .dark-theme {
   background-color: map-get($colors , darkBg);
-  color: rgba(255, 255, 255, 0.87);
+  color: map-get($colors , darkFont);
 }
