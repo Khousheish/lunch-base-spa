@@ -13,8 +13,7 @@
             name="firstName"
             [formControlName]="fieldNames.FirstName"
           > 
-          <label for="float-input_firstname">First name</label>
-          <!-- <label for="float-input">{{ 'AUTH.SIGN_IN.FIRSTNAME' | translate }}</label> -->
+          <label for="float-input">{{ 'AUTH.SIGN_UP.FIRSTNAME' | translate }}</label>
       </span>
     </div>
 
@@ -27,8 +26,7 @@
             name="lastName"
             [formControlName]="fieldNames.LastName"
           > 
-          <label for="float-input_lastname">Last name</label>
-          <!-- <label for="float-input">{{ 'AUTH.SIGN_IN.LASTNAME' | translate }}</label> -->
+          <label for="float-input">{{ 'AUTH.SIGN_UP.LASTNAME' | translate }}</label>
       </span>
     </div>
 
@@ -41,8 +39,7 @@
             name="email"
             [formControlName]="fieldNames.Email"
           > 
-          <label for="float-input_email">Email</label>
-          <!-- <label for="float-input">{{ 'AUTH.SIGN_IN.EMAIL' | translate }}</label> -->
+          <label for="float-input">{{ 'AUTH.SIGN_UP.EMAIL' | translate }}</label>
       </span>
     </div>
 
@@ -55,8 +52,7 @@
             name="username"
             [formControlName]="fieldNames.Username"
           > 
-          <label for="float-input_username">Username</label>
-          <!-- <label for="float-input">{{ 'AUTH.SIGN_IN.USERNAME' | translate }}</label> -->
+          <label for="float-input">{{ 'AUTH.SIGN_UP.USERNAME' | translate }}</label>
       </span>
     </div>
 
@@ -70,8 +66,7 @@
           [toggleMask]="true"
           [feedback]="false">
         </p-password>
-        <label for="float-password">Password</label>
-        <!-- <label for="float-password">{{ 'AUTH.SIGN_IN.PASSWORD' | translate }}</label> -->
+        <label for="float-password">{{ 'AUTH.SIGN_UP.PASSWORD' | translate }}</label>
       </span>
     </div>
 
@@ -85,16 +80,14 @@
           [toggleMask]="true"
           [feedback]="false">
         </p-password>
-        <label for="float-confpassword">Confirm password</label>
-        <!-- <label for="float-password">{{ 'AUTH.SIGN_IN.CONFIRM_PASSWORD' | translate }}</label> -->
+        <label for="float-password">{{ 'AUTH.SIGN_UP.CONFIRM_PASSWORD' | translate }}</label>
       </span>
     </div>
 
     <div class="field-checkbox">
       <p-checkbox [formControlName]="fieldNames.Vegetarian" [binary]="true" inputId="vegetarian">  
       </p-checkbox>
-      <label for="vegetarian"> Vegetarian</label>
-      <!-- <label for="float-password">{{ 'AUTH.SIGN_IN.VEGETARIAN' | translate }}</label> -->
+      <label for="float-password">{{ 'AUTH.SIGN_UP.VEGETARIAN' | translate }}</label>
     </div>
 
     <div>
