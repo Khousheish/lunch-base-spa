@@ -1,0 +1,110 @@
+<div>
+  <form *ngIf="signUpDetailsForm" [formGroup]="signUpDetailsForm">
+    <div>
+      <img src="" alt="">
+    </div>
+
+    <div>
+      <span class="p-float-label">
+          <input 
+            id="float-input_firstname" 
+            type="text"
+            pInputText 
+            name="firstName"
+            [formControlName]="fieldNames.FirstName"
+          > 
+          <label for="float-input_firstname">First name</label>
+          <!-- <label for="float-input">{{ 'AUTH.SIGN_IN.FIRSTNAME' | translate }}</label> -->
+      </span>
+    </div>
+
+    <div>
+      <span class="p-float-label">
+          <input 
+            id="float-input_lastname" 
+            type="text"
+            pInputText 
+            name="lastName"
+            [formControlName]="fieldNames.LastName"
+          > 
+          <label for="float-input_lastname">Last name</label>
+          <!-- <label for="float-input">{{ 'AUTH.SIGN_IN.LASTNAME' | translate }}</label> -->
+      </span>
+    </div>
+
+    <div>
+      <span class="p-float-label">
+          <input 
+            id="float-input_email" 
+            type="email"
+            pInputText 
+            name="email"
+            [formControlName]="fieldNames.Email"
+          > 
+          <label for="float-input_email">Email</label>
+          <!-- <label for="float-input">{{ 'AUTH.SIGN_IN.EMAIL' | translate }}</label> -->
+      </span>
+    </div>
+
+    <div>
+      <span class="p-float-label">
+          <input 
+            id="float-input_username" 
+            type="text"
+            pInputText 
+            name="username"
+            [formControlName]="fieldNames.Username"
+          > 
+          <label for="float-input_username">Username</label>
+          <!-- <label for="float-input">{{ 'AUTH.SIGN_IN.USERNAME' | translate }}</label> -->
+      </span>
+    </div>
+
+    <div>
+      <span class="p-float-label">
+        <p-password
+          id="float-password"
+          type="password"
+          name="password"
+          [formControlName]="fieldNames.Password"
+          [toggleMask]="true"
+          [feedback]="false">
+        </p-password>
+        <label for="float-password">Password</label>
+        <!-- <label for="float-password">{{ 'AUTH.SIGN_IN.PASSWORD' | translate }}</label> -->
+      </span>
+    </div>
+
+    <div>
+      <span class="p-float-label">
+        <p-password
+          id="float-confpassword"
+          type="password"
+          name="password"
+          [formControlName]="fieldNames.Confirm_Password"
+          [toggleMask]="true"
+          [feedback]="false">
+        </p-password>
+        <label for="float-confpassword">Confirm password</label>
+        <!-- <label for="float-password">{{ 'AUTH.SIGN_IN.CONFIRM_PASSWORD' | translate }}</label> -->
+      </span>
+    </div>
+
+    <div class="field-checkbox">
+      <p-checkbox [formControlName]="fieldNames.Vegetarian" [binary]="true" inputId="vegetarian">  
+      </p-checkbox>
+      <label for="vegetarian"> Vegetarian</label>
+      <!-- <label for="float-password">{{ 'AUTH.SIGN_IN.VEGETARIAN' | translate }}</label> -->
+    </div>
+
+    <div>
+      <p-button
+        label="Register"
+        type="submit"
+        (onClick)="signUp()"
+        [disabled]="signUpDetailsForm.invalid"
+      ></p-button>
+    </div>
+  </form>
+  <p>Already have an account? <a routerLink="/auth/sign-in">Sign in</a></p>
+</div>

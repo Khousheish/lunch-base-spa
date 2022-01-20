@@ -1,2 +1,18 @@
 {
+  "AUTH": {
+    "SIGN_IN": {
+      "TITLE": "Welcome Back!",
+      "IDENTITY": "Username or email address",
+      "PASSWORD": "Password"
+    },
+    "SIGN_UP": {
+      "FIRSTNAME": "First name",
+      "LASTNAME": "Last name",
+      "EMAIL": "Email",
+      "VEGETARIAN": "Vegetarian",
+      "USERNAME": "Username",
+      "PASSWORD": "Password",
+      "CONFIRM_PASSWORD": "Confirm password"
+    }
+  }
 }

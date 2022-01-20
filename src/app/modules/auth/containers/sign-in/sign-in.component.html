@@ -1,1 +1,45 @@
-<p>sign-in works!</p>
+<div>
+  <form *ngIf="signInDetailsForm" [formGroup]="signInDetailsForm">
+    <div>
+      <img src="" alt="">
+    </div>
+    <div>
+      <span class="p-float-label">
+          <input 
+            id="float-input" 
+            type="text"
+            pInputText 
+            name="identity"
+            [formControlName]="fieldNames.Identity"
+          > 
+          <label for="float-input">Username or email address</label>
+          <!-- <label for="float-input">{{ 'AUTH.SIGN_IN.IDENTITY' | translate }}</label> -->
+      </span>
+    </div>
+
+    <div>
+      <span class="p-float-label">
+        <p-password
+          id="float-password"
+          type="password"
+          name="password"
+          [formControlName]="fieldNames.Password"
+          [toggleMask]="true"
+          [feedback]="false">
+        </p-password>
+        <label for="float-password">Password</label>
+        <!-- <label for="float-password">{{ 'AUTH.SIGN_IN.PASSWORD' | translate }}</label> -->
+      </span>
+    </div>
+
+    <div>
+      <p-button
+        label="Login"
+        type="submit"
+        (onClick)="signIn()"
+        [disabled]="signInDetailsForm.invalid"
+      ></p-button>
+    </div>
+  </form>
+  <p>Don't have an account? <a routerLink="/auth/sign-up">Sign up</a></p>
+</div>
