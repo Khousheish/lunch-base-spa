@@ -1,2 +1,6 @@
 {
+  "APP": {
+    "DARK_MODE": "Dark Mode?",
+    "LOGOUT": "Log Out?"
+  }
 }

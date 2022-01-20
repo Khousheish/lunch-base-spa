@@ -1,0 +1,12 @@
+.p-avatar {
+  &.p-avatar-circle {
+    .view-avatar & {
+      width: 100%;
+      height: 100%;
+
+      .p-avatar-text {
+        font-size: 2rem;
+      }
+    }
+  }
+}

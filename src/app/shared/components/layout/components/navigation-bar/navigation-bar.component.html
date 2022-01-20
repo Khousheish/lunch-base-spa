@@ -1,0 +1,50 @@
+<p-menubar [model]="menubarItems">
+  <ng-template pTemplate="start">
+    <div class="flex py-2">
+      <img class="my-auto h-1rem" alt="logo" src="./assets/logo.svg">
+      <span class="my-auto pl-2">Lunchbase</span>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div class="flex align-items-center">
+      <lb-language-switcher class="pr-1"></lb-language-switcher>
+      <p class="pr-1">{{ 'APP.DARK_MODE' | translate }}</p>
+      <lb-theme-switcher class="pr-1"></lb-theme-switcher>
+
+      <div
+        class="profile-details"
+        (click)="profileActions.toggle($event)"
+      >
+        <p-avatar
+          [label]="!profileAvatar ? (profileName | uppercase) : ''"
+          [image]="profileAvatar"
+          shape="circle"
+        ></p-avatar>
+
+        <label class="profile-details__username">
+          {{ profileUsername }}
+        </label>
+
+        <i class="pi pi-chevron-down"></i>
+      </div>
+    </div>
+  </ng-template>
+</p-menubar>
+
+<p-overlayPanel #profileActions>
+  <ng-template pTemplate>
+    <ul class="profile-actions">
+      <li class="profile-actions__item profile-actions__theme">
+        {{ 'APP.DARK_THEME' | translate }}
+
+      </li>
+
+      <li
+        class="profile-actions__item"
+        (click)="logout()"
+      >
+        {{ 'APP.LOGOUT' | translate }}
+      </li>
+    </ul>
+  </ng-template>
+</p-overlayPanel>
