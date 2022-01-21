@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { REGEX } from '@Consts/regex.const';
 import { FieldNames } from '@Enums/field-names.enum';
@@ -12,7 +12,6 @@ import { AuthFacade } from '@Modules/auth/store/auth.facade';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignUpComponent implements OnInit {
-
   public signUpDetailsForm: FormGroup | null = null;
   public readonly fieldNames: typeof FieldNames = FieldNames;
 
@@ -22,10 +21,15 @@ export class SignUpComponent implements OnInit {
   ) { }
 
   public ngOnInit(): void {
-    this.signUpDetailsForm = this.createSignInForm();
+    this.signUpDetailsForm = this.createSignUpForm();
   }
 
-  public createSignInForm(): FormGroup {
+  // tslint:disable-next-line: prefer-function-over-method
+  public signUp(): void {
+    // this.authFacade.signUp(this.signUpDetailsForm?.value);
+  }
+
+  private createSignUpForm(): FormGroup {
     return this.formBuilder.group({
       [FieldNames.FirstName]: ['', [Validators.required, Validators.minLength(3)]],
       [FieldNames.LastName]: ['', [Validators.required, Validators.minLength(3)]],
@@ -40,18 +44,10 @@ export class SignUpComponent implements OnInit {
   }
 
   // tslint:disable-next-line: prefer-function-over-method
-  public signUp(): void {
-    // this.authFacade.signUp(this.signUpDetailsForm?.value);
-  }
-
-  // tslint:disable-next-line: prefer-function-over-method
   private confirmedValidator(formGroup: FormGroup): { [s: string]: boolean; } | null {
-    // tslint:disable-next-line: typedef
-    const password = formGroup.get(FieldNames.Password);
-    // tslint:disable-next-line: typedef
-    const confirmPassword = formGroup.get(FieldNames.Confirm_Password);
+    const password: AbstractControl | null = formGroup.get(FieldNames.Password);
+    const confirmPassword: AbstractControl | null = formGroup.get(FieldNames.Confirm_Password);
 
     return password === confirmPassword ? null : { passwordsMismatch: true };
   }
-
 }

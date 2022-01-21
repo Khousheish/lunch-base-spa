@@ -26,14 +26,14 @@ export class SignInComponent implements OnInit {
     this.signInDetailsForm = this.createSignInForm();
   }
 
-  public createSignInForm(): FormGroup {
+  public signIn(): void {
+    this.authFacade.signIn(this.signInDetailsForm?.value);
+  }
+
+  private createSignInForm(): FormGroup {
     return this.formBuilder.group({
       [FieldNames.Identity]: ['', [Validators.required, Validators.minLength(3)]],
       [FieldNames.Password]: ['', [Validators.required, Validators.minLength(8), Validators.pattern(REGEX.password)]],
     });
-  }
-
-  public signIn(): void {
-    this.authFacade.signIn(this.signInDetailsForm?.value);
   }
 }

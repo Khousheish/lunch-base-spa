@@ -5,5 +5,5 @@ export interface SignUpDetails {
   vegetarian: boolean;
   username: string;
   password: string;
-  confirm_password: string;
+  confirmPassword: string;
 }
