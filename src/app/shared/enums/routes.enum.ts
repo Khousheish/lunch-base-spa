@@ -8,6 +8,7 @@ export enum ModuleRoutes {
 export enum AuthRoutes {
   Root = '',
   SignIn = 'sign-in',
+  SignUp = 'sign-up',
 }
 
 export enum RoutePathMatchOptions {

@@ -1,2 +1,22 @@
 {
+  "AUTH": {
+    "SIGN_IN": {
+      "TITLE": "Welcome Back!",
+      "IDENTITY": "Username or email address",
+      "PASSWORD": "Password",
+      "SIGN_UP": "Sign up",
+      "ACCOUNT_CHECK": "Don't have an account?"
+    },
+    "SIGN_UP": {
+      "FIRSTNAME": "First name",
+      "LASTNAME": "Last name",
+      "EMAIL": "Email",
+      "VEGETARIAN": "Vegetarian",
+      "USERNAME": "Username",
+      "PASSWORD": "Password",
+      "CONFIRM_PASSWORD": "Confirm password",
+      "SIGN_IN": "Sign in",
+      "ACCOUNT_CHECK": "Already have an account?"
+    }
+  }
 }
