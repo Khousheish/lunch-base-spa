@@ -6,6 +6,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
@@ -27,6 +28,7 @@ const primeNgModules: ModulesType = [
   PasswordModule,
   InputTextModule,
   CheckboxModule,
+  CardModule,
 ];
 
 const modules: ModulesType = [

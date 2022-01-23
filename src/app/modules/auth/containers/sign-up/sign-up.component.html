@@ -1,103 +1,103 @@
-<div class="w-6 h-30rem m-auto flex flex-column justify-content-center align-items-center">
-  <form *ngIf="signUpDetailsForm" [formGroup]="signUpDetailsForm">
-    <div>
-      <img src="" alt="">
-    </div>
+<div class="m-auto flex flex-column justify-content-center align-items-center">
+  <img width="100px" height="100px" alt="logo" src="./assets/logo.svg">
+  <p-card>
+    <form *ngIf="signUpDetailsForm" [formGroup]="signUpDetailsForm" class="flex flex-column justify-content-center align-items-center">
 
-    <div>
-      <span class="p-float-label mt-4">
-          <input 
-            id="float-input_firstname" 
+      <div>
+        <span class="p-float-label mt-4">
+          <input
+            id="float-input_firstname"
             type="text"
-            pInputText 
+            pInputText
             name="firstName"
             [formControlName]="fieldNames.FirstName"
-          > 
+          >
           <label for="float-input_firstname">{{ 'AUTH.SIGN_UP.FIRSTNAME' | translate }}</label>
-      </span>
-    </div>
+        </span>
+      </div>
 
-    <div>
-      <span class="p-float-label mt-4">
-          <input 
-            id="float-input_lastname" 
+      <div>
+        <span class="p-float-label mt-4">
+          <input
+            id="float-input_lastname"
             type="text"
-            pInputText 
+            pInputText
             name="lastName"
             [formControlName]="fieldNames.LastName"
-          > 
+          >
           <label for="float-input_lastname">{{ 'AUTH.SIGN_UP.LASTNAME' | translate }}</label>
-      </span>
-    </div>
+        </span>
+      </div>
 
-    <div>
-      <span class="p-float-label mt-4">
-          <input 
-            id="float-input_email" 
+      <div>
+        <span class="p-float-label mt-4">
+          <input
+            id="float-input_email"
             type="email"
-            pInputText 
+            pInputText
             name="email"
             [formControlName]="fieldNames.Email"
-          > 
+          >
           <label for="float-input_email">{{ 'AUTH.SIGN_UP.EMAIL' | translate }}</label>
-      </span>
-    </div>
+        </span>
+      </div>
 
-    <div>
-      <span class="p-float-label mt-4">
-          <input 
-            id="float-input_username" 
+      <div>
+        <span class="p-float-label mt-4">
+          <input
+            id="float-input_username"
             type="text"
-            pInputText 
+            pInputText
             name="username"
             [formControlName]="fieldNames.Username"
-          > 
+          >
           <label for="float-input_username">{{ 'AUTH.SIGN_UP.USERNAME' | translate }}</label>
-      </span>
-    </div>
+        </span>
+      </div>
 
-    <div>
-      <span class="p-float-label mt-4">
-        <p-password
-          id="float-password"
-          type="password"
-          name="password"
-          [formControlName]="fieldNames.Password"
-          [toggleMask]="true"
-          [feedback]="true">
-        </p-password>
-        <label for="float-password">{{ 'AUTH.SIGN_UP.PASSWORD' | translate }}</label>
-      </span>
-    </div>
+      <div>
+        <span class="p-float-label mt-4">
+          <p-password
+            id="float-password"
+            type="password"
+            name="password"
+            [formControlName]="fieldNames.Password"
+            [toggleMask]="true"
+            [feedback]="true">
+          </p-password>
+          <label for="float-password">{{ 'AUTH.SIGN_UP.PASSWORD' | translate }}</label>
+        </span>
+      </div>
 
-    <div>
-      <span class="p-float-label mt-4">
-        <p-password
-          id="float-confpassword"
-          type="password"
-          name="password"
-          [formControlName]="fieldNames.Confirm_Password"
-          [toggleMask]="true"
-          [feedback]="false">
-        </p-password>
-        <label for="float-confpassword">{{ 'AUTH.SIGN_UP.CONFIRM_PASSWORD' | translate }}</label>
-      </span>
-    </div>
+      <div>
+        <span class="p-float-label mt-4">
+          <p-password
+            id="float-confpassword"
+            type="password"
+            name="password"
+            [formControlName]="fieldNames.Confirm_Password"
+            [toggleMask]="true"
+            [feedback]="false">
+          </p-password>
+          <label for="float-confpassword">{{ 'AUTH.SIGN_UP.CONFIRM_PASSWORD' | translate }}</label>
+        </span>
+      </div>
 
-    <div class="field-checkbox mt-4">
-      <p-checkbox [formControlName]="fieldNames.Vegetarian" [binary]="true" inputId="vegetarian">  
-      </p-checkbox>
-      <label for="vegetarian">{{ 'AUTH.SIGN_UP.VEGETARIAN' | translate }}</label>
-    </div>
+      <div class="field-checkbox mt-4">
+        <p-checkbox [formControlName]="fieldNames.Vegetarian" [binary]="true" inputId="vegetarian">
+        </p-checkbox>
+        <label for="vegetarian">{{ 'AUTH.SIGN_UP.VEGETARIAN' | translate }}</label>
+      </div>
 
-    <div class="mt-3">
-      <p-button
-        label="Register"
-        type="submit"
-        (onClick)="signUp()"
-        [disabled]="signUpDetailsForm.invalid"
-      ></p-button>
-    </div>
-  </form>
-  <p class="mt-2">{{ 'AUTH.SIGN_UP.ACCOUNT_CHECK' | translate }} <a routerLink="/auth/sign-in">{{ 'AUTH.SIGN_UP.SIGN_IN' | translate }}</a></p>
-</div> 
+      <div class="mt-3">
+        <p-button
+          label="Register"
+          type="submit"
+          (onClick)="signUp()"
+          [disabled]="signUpDetailsForm.invalid"
+        ></p-button>
+      </div>
+    </form>
+    <p class="mt-2">{{ 'AUTH.SIGN_UP.ACCOUNT_CHECK' | translate }} <a routerLink="/auth/sign-in">{{ 'AUTH.SIGN_UP.SIGN_IN' | translate }}</a></p>
+  </p-card>
+</div>
