@@ -4,77 +4,89 @@
     <form *ngIf="signUpDetailsForm" [formGroup]="signUpDetailsForm" class="flex flex-column justify-content-center align-items-center">
 
       <div>
-        <span class="p-float-label mt-4">
+        <span class="p-float-label mt-4 w-15rem">
           <input
             id="float-input_firstname"
             type="text"
             pInputText
             name="firstName"
             [formControlName]="fieldNames.FirstName"
+            class="w-full"
           >
           <label for="float-input_firstname">{{ 'AUTH.SIGN_UP.FIRSTNAME' | translate }}</label>
         </span>
       </div>
 
       <div>
-        <span class="p-float-label mt-4">
+        <span class="p-float-label mt-4 w-15rem">
           <input
             id="float-input_lastname"
             type="text"
             pInputText
             name="lastName"
             [formControlName]="fieldNames.LastName"
+            class="w-full"
           >
           <label for="float-input_lastname">{{ 'AUTH.SIGN_UP.LASTNAME' | translate }}</label>
         </span>
       </div>
 
       <div>
-        <span class="p-float-label mt-4">
+        <span class="p-float-label mt-4 w-15rem">
           <input
             id="float-input_email"
             type="email"
             pInputText
             name="email"
             [formControlName]="fieldNames.Email"
+            class="w-full"
           >
           <label for="float-input_email">{{ 'AUTH.SIGN_UP.EMAIL' | translate }}</label>
         </span>
       </div>
 
       <div>
-        <span class="p-float-label mt-4">
+        <span class="p-float-label mt-4 w-15rem">
           <input
             id="float-input_username"
             type="text"
             pInputText
             name="username"
             [formControlName]="fieldNames.Username"
+            class="w-full"
           >
           <label for="float-input_username">{{ 'AUTH.SIGN_UP.USERNAME' | translate }}</label>
         </span>
       </div>
 
       <div>
-        <span class="p-float-label mt-4">
-          <p-password
-            id="float-password"
-            type="password"
-            name="password"
-            [formControlName]="fieldNames.Password"
-            [toggleMask]="true"
-            [feedback]="true">
+        <span class="p-float-label mt-4 w-15rem">
+          <p-password id="float-password" [formControlName]="fieldNames.Password">
+            <ng-template pTemplate="header">
+              <h6>Pick a password</h6>
+            </ng-template>
+            <ng-template pTemplate="footer">
+              <p-divider></p-divider>
+              <p class="mt-2">Suggestions</p>
+              <ul class="pl-2 ml-2 mt-3" style="line-height: 1.5">
+                <li>At least one lowercase</li>
+                <li>At least one uppercase</li>
+                <li>At least one numeric</li>
+                <li>Minimum 8 characters</li>
+              </ul>
+            </ng-template>
           </p-password>
           <label for="float-password">{{ 'AUTH.SIGN_UP.PASSWORD' | translate }}</label>
         </span>
       </div>
 
       <div>
-        <span class="p-float-label mt-4">
+        <span class="p-float-label mt-4 w-15rem">
           <p-password
             id="float-confpassword"
             type="password"
             name="password"
+            class="w-full"
             [formControlName]="fieldNames.Confirm_Password"
             [toggleMask]="true"
             [feedback]="false">
@@ -83,16 +95,17 @@
         </span>
       </div>
 
-      <div class="field-checkbox mt-4">
+      <div class="field-checkbox mt-4 w-15rem">
         <p-checkbox [formControlName]="fieldNames.Vegetarian" [binary]="true" inputId="vegetarian">
         </p-checkbox>
         <label for="vegetarian">{{ 'AUTH.SIGN_UP.VEGETARIAN' | translate }}</label>
       </div>
 
-      <div class="mt-3">
+      <div class="mt-3 w-15rem">
         <p-button
           label="Register"
           type="submit"
+          class="w-12"
           (onClick)="signUp()"
           [disabled]="signUpDetailsForm.invalid"
         ></p-button>

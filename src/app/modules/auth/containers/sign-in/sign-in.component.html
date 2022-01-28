@@ -4,7 +4,7 @@
     <form *ngIf="signInDetailsForm" [formGroup]="signInDetailsForm" autocomplete="off">
 
       <div>
-        <span class="p-float-label mt-4">
+        <span class="p-float-label mt-4 w-15rem">
           <input
             id="float-input"
             type="text"
@@ -15,13 +15,14 @@
             pInputText
             name="identity"
             [formControlName]="fieldNames.Identity"
+            class="w-full"
           >
           <label for="float-input">{{ 'AUTH.SIGN_IN.IDENTITY' | translate }}</label>
         </span>
       </div>
 
       <div>
-        <span class="p-float-label mt-4">
+        <span class="p-float-label mt-4 w-15rem">
           <p-password
             id="float-password"
             type="password"

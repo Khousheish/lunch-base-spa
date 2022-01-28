@@ -11,6 +11,11 @@ const routes: Routes = [
       .then((module: Module): Module => module.AuthModule),
   },
   {
+    path: ModuleRoutes.User,
+    loadChildren: (): Promise<Module> => import('./modules/user/user.module')
+      .then((module: Module): Module => module.UserModule),
+  },
+  {
     path: ModuleRoutes.Root,
     pathMatch: RoutePathMatchOptions.Full,
     redirectTo: `${ModuleRoutes.Auth}/${AuthRoutes.SignIn}`,

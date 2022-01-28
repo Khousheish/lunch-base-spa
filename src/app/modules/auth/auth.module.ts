@@ -8,6 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CheckboxModule } from 'primeng/checkbox';
+import { DividerModule } from 'primeng/divider';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 
@@ -29,6 +30,7 @@ const primeNgModules: ModulesType = [
   InputTextModule,
   CheckboxModule,
   CardModule,
+  DividerModule,
 ];
 
 const modules: ModulesType = [
