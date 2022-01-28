@@ -5,14 +5,12 @@
         <p>{{ user.username }}</p>
         <p class="mt-2">{{ 'AUTH.SIGN_UP.VEGETARIAN' | translate }}: {{ vegetarian }}</p>
         <div class="mt-3">
-          <button 
-            pButton 
-            pRipple 
+          <p-button 
             type="button" 
             label="Edit Profile" 
-            class="p-button-raised p-button-warning"
+            styleClass="p-button-raised p-button-warning"
             (click)="editMode = !editMode"
-          ></button>
+          ></p-button>
         </div>
       </div>
       <div *ngIf="editMode">
@@ -34,25 +32,21 @@
             <label for="vegetarian">{{ 'AUTH.SIGN_UP.VEGETARIAN' | translate }}</label>
           </div>
           <div class="mt-4">
-            <button 
-              pButton 
-              pRipple 
+            <p-button 
               type="button" 
               label="Cancel"  
               icon="pi pi-times"
-              class="p-button-raised p-button-secondary"
+              styleClass="p-button-raised p-button-secondary"
               (click)="editMode = !editMode"
-            ></button>
-            <button 
-              pButton 
-              pRipple 
+            ></p-button>
+            <p-button  
               type="button" 
               label="Save" 
               icon="pi pi-check"
-              class="p-button-raised p-button-success ml-2"
+              styleClass="p-button-raised p-button-success ml-2"
               (click)="Save()"
               [disabled]="userDetailsForm.invalid"
-            ></button>
+            ></p-button>
           </div>
         </form>
       </div>
