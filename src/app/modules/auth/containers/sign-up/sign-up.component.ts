@@ -34,7 +34,7 @@ export class SignUpComponent implements OnInit {
       [FieldNames.FirstName]: ['', [Validators.required, Validators.minLength(3)]],
       [FieldNames.LastName]: ['', [Validators.required, Validators.minLength(3)]],
       [FieldNames.Email]: ['', [Validators.required, Validators.email]],
-      [FieldNames.Vegetarian]: ['', [Validators.required]],
+      [FieldNames.Vegetarian]: [false],
       [FieldNames.Username]: ['', [Validators.required, Validators.minLength(3), Validators.pattern(REGEX.userName)]],
       [FieldNames.Password]: ['', [Validators.required, Validators.minLength(8), Validators.pattern(REGEX.password)]],
       [FieldNames.Confirm_Password]: ['', [Validators.required, Validators.minLength(8), Validators.pattern(REGEX.password)]],

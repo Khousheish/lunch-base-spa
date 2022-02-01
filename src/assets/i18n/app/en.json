@@ -1,6 +1,7 @@
 {
   "APP": {
     "DARK_MODE": "Dark Mode?",
-    "LOGOUT": "Log Out?"
+    "LOGOUT": "Log Out?",
+    "VIEW_PROFILE": "View Profile"
   }
 }

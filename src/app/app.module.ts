@@ -15,10 +15,12 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MultiTranslateLoader } from './shared/loaders/multi-translate.loader';
+import { YesNoPipe } from './shared/pipe/yes-no.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
+    YesNoPipe,
   ],
   imports: [
     BrowserAnimationsModule,

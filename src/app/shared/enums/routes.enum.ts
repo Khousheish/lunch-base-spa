@@ -11,6 +11,10 @@ export enum AuthRoutes {
   SignUp = 'sign-up',
 }
 
+export enum UserRoutes {
+  Root = '',
+}
+
 export enum RoutePathMatchOptions {
   Full = 'full',
 }

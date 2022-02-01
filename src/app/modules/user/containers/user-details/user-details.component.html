@@ -1,0 +1,55 @@
+<div *ngIf="user | async; let user" class="p-5 flex justify-content-center align-items-center">
+  <p-card header="{{ user.firstName }} {{ user.lastName }}" subheader="{{ user.email  }}" [style]="{width: '360px'}" styleClass="p-card-shadow">
+    <div> 
+      <div *ngIf="!editMode">
+        <p>{{ user.username }}</p>
+        <p class="mt-2">{{ 'AUTH.SIGN_UP.VEGETARIAN' | translate }}: {{ user.vegetarian }}</p>
+        <div class="mt-3">
+          <p-button 
+            type="button" 
+            label="Edit Profile" 
+            styleClass="p-button-raised p-button-warning"
+            (click)="editMode = !editMode"
+          ></p-button>
+        </div>
+      </div>
+      <div *ngIf="editMode">
+        <form *ngIf="userDetailsForm" [formGroup]="userDetailsForm">
+          <span class="p-float-label">
+            <input
+              id="float-input_username"
+              type="text"
+              pInputText
+              name="username"
+              [formControlName]="fieldNames.Username"
+              class="w-full"
+            >
+            <label for="float-input_username">{{ 'AUTH.SIGN_UP.USERNAME' | translate }}</label>
+          </span>
+          <div class="field-checkbox mt-3">
+            <p-checkbox [formControlName]="fieldNames.Vegetarian" [binary]="true" inputId="vegetarian">
+            </p-checkbox>
+            <label for="vegetarian">{{ 'AUTH.SIGN_UP.VEGETARIAN' | translate }}</label>
+          </div>
+          <div class="mt-4">
+            <p-button 
+              type="button" 
+              label="Cancel"  
+              icon="pi pi-times"
+              styleClass="p-button-raised p-button-secondary"
+              (click)="editMode = !editMode"
+            ></p-button>
+            <p-button  
+              type="button" 
+              label="Save" 
+              icon="pi pi-check"
+              styleClass="p-button-raised p-button-success ml-2"
+              (click)="Save()"
+              [disabled]="userDetailsForm.invalid"
+            ></p-button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </p-card>
+</div>
