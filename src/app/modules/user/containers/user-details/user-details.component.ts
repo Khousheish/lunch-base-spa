@@ -25,6 +25,7 @@ export class UserDetailsComponent implements OnInit {
 
   public ngOnInit(): void {
     this.userDetailsForm = this.createUserForm();
+    // tslint:disable-next-line: typedef
     this.user = new Promise<User>((resolve, reject): void => {
       resolve({
         id: 1,
