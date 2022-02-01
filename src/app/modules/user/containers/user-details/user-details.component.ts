@@ -15,9 +15,8 @@ import { UserFacade } from '@Modules/user/store/user.facade';
 export class UserDetailsComponent implements OnInit {
   public userDetailsForm: FormGroup | null = null;
   public readonly fieldNames: typeof FieldNames = FieldNames;
+  public user: Promise<User> | null = null;
   public editMode: boolean = false;
-  public user!: User;
-  public vegetarian: boolean = true;
 
   public constructor(
     private readonly userFacade: UserFacade,
@@ -26,8 +25,16 @@ export class UserDetailsComponent implements OnInit {
 
   public ngOnInit(): void {
     this.userDetailsForm = this.createUserForm();
-    this.userFacade.user$.subscribe((user: User): void => {
-      this.user = user;
+    this.user = new Promise<User>((resolve, reject): void => {
+      resolve({
+        id: 1,
+        username: 'shahdabbar',
+        email: 'shahdabbar@gmail.com',
+        firstName: 'Shahd',
+        lastName: 'Abbar',
+        vegetarian: true,
+        createdAt: '2020-02-02',
+      });
     });
   }
 

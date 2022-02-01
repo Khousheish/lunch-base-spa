@@ -11,6 +11,7 @@ export const userInitialState: UserState = {
     email: 'khousheish@live.com',
     firstName: 'Hassan',
     lastName: 'Khousheish',
+    vegetarian: true,
     createdAt: '123',
   },
   pending: false,
